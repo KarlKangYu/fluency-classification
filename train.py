@@ -69,7 +69,7 @@ def dev_step(x_batch, target_batch, y_batch, seq_batch, om_batch, fm_batch, sess
         cnn.fluency_masks: fm_batch
     }
     step, loss, accuracy = sess.run(
-        [cnn.global_step, cnn.loss, cnn.accuracy],
+        [cnn.global_step, cnn._cost, cnn.accuracy],
     feed_dict)
     if accuracy > max_dev_acc:
         max_dev_acc = accuracy
